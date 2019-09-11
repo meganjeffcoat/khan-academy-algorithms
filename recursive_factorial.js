@@ -1,16 +1,17 @@
 var factorial = function(n) {
-  var result = 1;
-  for (var i = 1; i <= n; i++) {
-    result *= i;
-  }
+	// base case: 
+	if (n === 0) {
+	    return 1;
+	}
+	
+	// recursive case:
+	return factorial(n - 1) * n;
+}; 
 
-  return result;
-};
+println("The value of 0! is " + factorial(0) + ".");
+println("The value of 5! is " + factorial(5) + ".");
 
-println("The value of 5! should be " + 5 * 4 * 3 * 2 * 1);
-println("The value of 5! is " + factorial(5));
-println("The value of 0! should be 1");
-println("The value of 0! is " + factorial(0));
-
-Program.assertEqual(factorial(5), 120);
 Program.assertEqual(factorial(0), 1);
+Program.assertEqual(factorial(5), 120);
+Program.assertEqual(factorial(2), 2);
+Program.assertEqual(factorial(3), 6);
